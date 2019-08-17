@@ -25,18 +25,22 @@ exports.up = function(knex, Promise) {
       })
       .createTable('resources', function(resources){
           resources.increments();
-          resources.string('name',128).notNullable();
+          resources.string('name',128).unique().notNullable();
           resources.text('description').defaultTo('No Description Given');
       })
       .createTable('resources_projects', tbl => {
           tbl.integer('resource_id')
             .unsigned()
             .notNullable()
-            .references('id').inTable('resources');
+            .references('id').inTable('resources')
+            .onDelete('CASCADE')
+            .onUpdate('CASCADE');
           tbl.integer('project_id')
             .unsigned()
             .notNullable()
-            .references('id').inTable('projects');
+            .references('id').inTable('projects')
+            .onDelete('CASCADE')
+            .onUpdate('CASCADE');;
           tbl.primary(['resource_id','project_id']);
       });
 };
@@ -46,6 +50,5 @@ exports.down = function(knex) {
     .dropTableIfExists('resources')
     .dropTableIfExists('tasks')
     .dropTableIfExists('projects');
-
 };
 

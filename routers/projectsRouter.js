@@ -35,8 +35,8 @@ router.post('/', validateProject, async (req, res) => {
 
 //MiddleWare
 function validateProject(req, res, next) {
-    if (!req.body.name || !req.body.description) {
-        res.status(404).json({message:'Project name or project description is missing.'});
+    if (!req.body.name) {
+        res.status(404).json({message:'Project name is missing.'});
     } else {
         next();
     }
