@@ -37,7 +37,7 @@ router.get('/:id', validateTaskId, async (req, res) => {
 async function validateTaskId (req, res, next) {
     try {
         
-        const action = await taskModel.getById(req.params.id);
+        const task = await taskModel.getById(req.params.id);
         if (!task) {
             res.status(404).json({message:'Invalid task id'});
         } else {
@@ -62,8 +62,8 @@ async function validateTask (req, res, next) {
 
     if (!req.body){
         res.status(400).json({message: "Error: There is no req.body. There is no task"})
-    } else if (!req.body.project_id || !req.body.description || !req.body.notes) {
-        res.status(400).json({message: "Missing task ID, description, or notes!"})
+    } else if (!req.body.project_id || !req.body.description ) {
+        res.status(400).json({message: "Missing project_id ID or description!"})
     } else if (req.body.description.length > 128 || req.body.description.length < 1) {
         res.status(400).json({message:"Description must be between 1 to 128 characters!"})
     } else {

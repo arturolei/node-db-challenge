@@ -10,6 +10,9 @@ module.exports = {
 function get() {
     return db('tasks')
         .leftJoin('projects', 'projects.id', 'project_id')
+        .select('projects.name as ProjectName', 
+        'projects.description as ProjectDescription',
+        'tasks.description as TaskDescription','tasks.notes','tasks.completed')
         .then(tasks => {
         return tasks.map(task=>mappers.actionToBody(task))
     });

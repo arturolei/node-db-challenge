@@ -11,7 +11,7 @@ server.use(express.json());
 
 //Applying routes
 server.use('/api/projects', projectsRouter);
-server.use('/api/actions', tasksRouter);
+server.use('/api/tasks', tasksRouter);
 server.use('/api/resources',resourcesRouter);
 
 server.get('/', (req, res) => {
