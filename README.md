@@ -21,12 +21,12 @@ Follow these steps to set up and work on your project:
 - [X] Clone your forked version of the Repository.
 - [X] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
 - [X] Implement the project on this Branch, committing changes regularly.
-- [] Push commits: git push origin `firstName-lastName`.
+- [X] Push commits: git push origin `firstName-lastName`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `firstName-lastName` Branch into master on **your fork, don't make Pull Requests against Lambda's repository**.
-- [ ] Please don't merge your own pull request.
+- [X] Submit a Pull-Request to merge `firstName-lastName` Branch into master on **your fork, don't make Pull Requests against Lambda's repository**.
+- [X] Please don't merge your own pull request.
 - [ ] Add your _Team Lead_ as a Reviewer on the Pull-request
 - [ ] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
 
