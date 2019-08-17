@@ -129,6 +129,9 @@ An `task` one of the steps needed to complete the project. We want to store the 
 
 
 
+
+
+
 ## Stretch Problem
 
 This section is **optional** and not counted towards MVP. Start working on it after you're done with the main assignment.
@@ -172,12 +175,10 @@ Add an endpoint for retrieving a `project` by its `id` that returns an object wi
 
 Add the remaining CRUD operations for projects and tasks.
 
-Use `knex` to add _data seeding_ scripts for projects and tasks.
+- [X] Use `knex` to add _data seeding_ scripts for projects and tasks.
 
-Add support for the concept of `contexts`. A context is something like _at home_, _at work_ or _at computer_. The idea is that some tasks require one or more `contexts` in order to be worked on. For example, the task of _file income taxes_ may require that you are _at home_, _at computer_ and _online_ so if you are _at work_ and look at the list of pending tasks you could do in your current context, filing your taxes will not be one of them.
-
-A `context` can be applied to more than one `task`. An task can be tied to more than one context, like in the example above.
-
-When retrieving an `task` by _id_, add a property that lists all the `contexts` related to that task.
+- [] Add support for the concept of `contexts`. A context is something like _at home_, _at work_ or _at computer_. The idea is that some tasks require one or more `contexts` in order to be worked on. For example, the task of _file income taxes_ may require that you are _at home_, _at computer_ and _online_ so if you are _at work_ and look at the list of pending tasks you could do in your current context, filing your taxes will not be one of them.
+  - [] A `context` can be applied to more than one `task`. An task can be tied to more than one context, like in the example above.
+  - [] When retrieving an `task` by _id_, add a property that lists all the `contexts` related to that task.
 
 _Good luck and have fun!_

@@ -17,7 +17,7 @@ function get() {
 async function getById(id){
     let queryProject = await db('projects').where('projects.id', id).first();
     let queryTasks = await db('tasks').where('project_id', id);
-    //let resourceQuery = await db('')
+    //let resourceQuery = await db('resources')
 
     queryProject.tasks = queryTasks.map(task=>mappers.actionToBody(task));
 
