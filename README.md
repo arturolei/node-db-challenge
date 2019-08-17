@@ -57,13 +57,13 @@ Take the steps necessary to complete the project from scratch. Start by initiali
 
 Complete the following tasks:
 
-- [ ] Design the data model and use _knex migrations_ to create the database and tables.
+- [X] Design the data model and use _knex migrations_ to create the database and tables.
 - [ ] Build an API with endpoints for:
   - [ ] adding resources.
-  - [ ] retrieving a list of resources.
-  - [ ] adding projects.
-  - [ ] retrieving a list of projects.
-  - [ ] adding tasks.
+  - [X] retrieving a list of resources.
+  - [X] adding projects.
+  - [X] retrieving a list of projects.
+  - [X] adding tasks.
   - [ ] retrieving a list of tasks. **The list of tasks should include the project name and project description**.
 - [ ] When returning `project` or `task` information, the `completed` property should be `true` or `false`.
 
@@ -89,15 +89,15 @@ The API should return:
 
 ### Business Rules
 
-- a `project` can have multiple `tasks`.
-- a `task` belongs to only one `project`.
-- a `project` can use multiple `resources`.
-- the same `resource` can be used in multiple `projects`.
-- when adding `projects` the client must provide a name, the description is optional.
-- when adding `resources` the client must provide a name, the description is optional.
-- when adding a `task` the client must provide a description, the notes are optional.
-- when adding a `task` the client must provide the `id` of an existing project.
-- for `projects` and `tasks` if no value is provided for the `completed` property, the API should provide a default value of `false`.
+- [X] a `project` can have multiple `tasks`.
+- [X] a `task` belongs to only one `project`.
+- [X] a `project` can use multiple `resources` ---> Many to many
+- the same `resource` can be used in multiple `projects`. --> Many to many
+- [X] when adding `projects` the client must provide a name, the description is optional.
+- [X] when adding `resources` the client must provide a name, the description is optional.
+- [X] when adding a `task` the client must provide a description, the notes are optional.
+- [X] when adding a `task` the client must provide the `id` of an existing project.
+- [X] for `projects` and `tasks` if no value is provided for the `completed` property, the API should provide a default value of `false`.
 
 ### Entities
 
@@ -122,6 +122,12 @@ An `task` one of the steps needed to complete the project. We want to store the 
 - [X] a description of what needs to be done. This column is required.
 - [X] a notes column to add additional information.
 - [X] a boolean that indicates if the task has been completed. This column cannot be NULL, the default value should be `false`.
+
+
+
+
+
+
 
 ## Stretch Problem
 
