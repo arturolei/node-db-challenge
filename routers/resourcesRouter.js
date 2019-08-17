@@ -46,7 +46,7 @@ async function validateResource (req, res, next) {
 async function validateResourceId (req, res, next) {
     try {
         const resource = await resourceModel.getById(req.params.id);
-        if (!resource) {
+        if (!resource || resource.length === 0) {
             res.status(404).json({message:'Invalid resource id'});
         } else {
             req.resource = resource;
