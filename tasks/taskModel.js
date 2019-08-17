@@ -11,16 +11,16 @@ function get() {
     return db('tasks')
         .leftJoin('projects', 'projects.id', 'project_id')
         .select('projects.name as ProjectName', 
-        'projects.description as ProjectDescription',
+        'projects.description as ProjectDescription','tasks.id as TaskID',
         'tasks.description as TaskDescription','tasks.notes','tasks.completed')
         .then(tasks => {
         return tasks.map(task=>mappers.actionToBody(task))
     });
 }
 
-function getById(taskId) {
+function getById(id) {
     return db('tasks')
-        .where('tasks.id', taskId)
+        .where('tasks.id', id)
         .first()
         .then(task => mappers.actionToBody(task));
 }

@@ -12,9 +12,9 @@ function get() {
     return db('resources')
 }
 
-function getById(resourceId) {
+function getById(id) {
     return db('resources')
-        .where('resources.id', resourceId);
+        .where('resources.id', id);
 }
 
 //inserts resource then gets us newly added resource back as output

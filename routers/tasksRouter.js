@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
 // GET task by id
 router.get('/:id', validateTaskId, async (req, res) => {
-        res.status(200).json(req.action);
+        res.status(200).json(req.task);
 });
 
 
