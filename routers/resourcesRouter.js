@@ -17,7 +17,7 @@ router.get('/', async (req,res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', validateResource, async (req, res) => {
     try {    
         const resource = await resourceModel.insert(req.body);
         res.status(201).json(resource);
@@ -26,5 +26,16 @@ router.post('/', async (req, res) => {
     }
 });
 
+//MiddleWare for Valididating whether resource in POST request has right components
+
+async function validateResource (req, res, next) {
+    if (!req.body){
+        res.status(400).json({message: "Error: There is no req.body. There is no task"})
+    } else if (!req.body.name) {
+        res.status(400).json({message: "A resource needs a name!"})
+    } else {
+       next();
+    }
+}
 
 module.exports = router;

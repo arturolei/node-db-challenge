@@ -58,13 +58,13 @@ Take the steps necessary to complete the project from scratch. Start by initiali
 Complete the following tasks:
 
 - [X] Design the data model and use _knex migrations_ to create the database and tables.
-- [ ] Build an API with endpoints for:
-  - [X] adding resources.
-  - [X] retrieving a list of resources.
+- [X] Build an API with endpoints for:
+  - [X] adding resources. --> POST Resources
+  - [X] retrieving a list of resources. --> GET Resources
   - [X] adding projects. --> POST projects
   - [X] retrieving a list of projects. GET Projects
   - [X] adding tasks.-->POST Tasks
-  - [X] retrieving a list of tasks. **The list of tasks should include the project name and project description**.---> GET Tasks with JOIN
+  - [X] retrieving a list of tasks. **The list of tasks should include the project name and project description**. ---> GET Tasks with JOIN
 - [X] When returning `project` or `task` information, the `completed` property should be `true` or `false`.
 
 For example, instead of returning a `task` that looks like this:
