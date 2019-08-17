@@ -19,8 +19,8 @@ exports.up = function(knex, Promise) {
           .onDelete('CASCADE')
           .onUpdate('CASCADE');
     
-        tasks.string('description', 128).defaultTo('no description given');
-        tasks.text('notes').notNullable();
+        tasks.string('description', 128).notNullable();
+        tasks.text('notes').defaultTo('No Notes');
         tasks.boolean('completed').defaultTo(false);
       })
       .createTable('resources', function(resources){
