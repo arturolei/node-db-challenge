@@ -8,7 +8,9 @@ module.exports = {
 }
 //GET all tasks
 function get() {
-    return db('tasks').then(tasks => {
+    return db('tasks')
+        .leftJoin('projects', 'projects.id', 'project_id')
+        .then(tasks => {
         return tasks.map(task=>mappers.actionToBody(task))
     });
 }

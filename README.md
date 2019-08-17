@@ -64,7 +64,7 @@ Complete the following tasks:
   - [] adding projects. POST projects
   - [] retrieving a list of projects. GET Projects
   - [] adding tasks. POST Tasks
-  - [ ] retrieving a list of tasks. **The list of tasks should include the project name and project description**. GET Tasks
+  - [ ] retrieving a list of tasks. **The list of tasks should include the project name and project description**. GET Tasks with JOIN
 - [ ] When returning `project` or `task` information, the `completed` property should be `true` or `false`.
 
 For example, instead of returning a `task` that looks like this:
