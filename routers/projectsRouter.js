@@ -17,8 +17,17 @@ router.get('/', async (req,res) => {
 })
 
 //GET Project by ID
-router.get('/:id', validateProjectId, async (req, res) => {
-    res.status(200).json(req.project);
+router.get('/:id', async (req, res) => {
+    try {
+        const project = await projectModel.getById(req.params.id);
+        res.status(200).json(project);
+    }
+    catch (err){
+        res.status(500).json({message: 'Error', errorMessage: err.message})
+
+    }
+    //const project = await projectModel.getById(req.params.id);
+    //res.status(200).json(req.project);
 });
 
 
