@@ -24,7 +24,9 @@ async function getById(id){
     .select('resources.id', 'resources.name', 'resources.description')
     .where('projects.id', id)
     
-    console.log(resourceQuery)
+
+    queryProject.resources = resourceQuery;
+    console.log(resourceQuery);
     */
 
     queryProject.tasks = queryTasks.map(task=>mappers.actionToBody(task));
